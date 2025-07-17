@@ -4,7 +4,7 @@ function fetchProductsThen() {
     .then(response => response.json())
     .then(data => {
 console.log("Product names using .then():");
-        data.forEach(product => console.log(product.name));{
+        data.forEach(product => console.log(product.name));
     })
     .catch(error => {
         console.error("Error in fetchProductsThen:", error.message);
@@ -49,9 +49,10 @@ console.log("Product names using .then():");
     }
      //This function will help handle errors
     function handleError(error) {
-        concole.error('An error occurred: ${error.message}');
+        console.error('An error occurred: ${error.message}');
     }
+
+    //This will call both of the fetch functions
+    fetchProductsThen();
+    fetchProductsAsync();
            
-
-
-
