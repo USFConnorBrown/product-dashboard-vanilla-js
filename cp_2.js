@@ -33,13 +33,13 @@ console.log("Product names using .then():");
             card.classList.add('product-card');
 
             const img = document.createElement('img');
-            img.src = product.image;
-            img.alt = product.name;
+            img.src = product.fields.image[0].url;
+            img.alt = product.fields.name;
             const name = document.createElement('h3');
-            name.textContent = product.name;
+            name.textContent = product.fields.name;
 
             const price = document.createElement('p');
-            price.textContent = `$${(product.price / 100).toFixed(2)}`;
+            price.textContent = `$${(product.fields.price / 100).toFixed(2)}`;
 
             card.appendChild(img);
             card.appendChild(name);
@@ -49,7 +49,7 @@ console.log("Product names using .then():");
     }
      //This function will help handle errors
     function handleError(error) {
-        console.error('An error occurred: ${error.message}');
+        console.error(`An error occurred: ${error.message}`);
     }
 
     //This will call both of the fetch functions
