@@ -47,7 +47,10 @@ console.log("Product names using .then():");
             container.appendChild(card);
         });
     }
-        
+     //This function will help handle errors
+    function handleError(error) {
+        concole.error('An error occurred: ${error.message}');
+    }
            
 
 
