@@ -22,7 +22,32 @@ console.log("Product names using .then():");
         }
     }
 
-    
+    //This function will help render the products on the page
+    function displayProducts(products) {
+        const container = document.getElementById('product-container');
+        container.innerHTML = ''; // Clear the existing content
+
+        const firstFive = products.slice(0, 5);
+        firstFive.forEach(product => {
+            const card = document.createElement('div');
+            card.classList.add('product-card');
+
+            const img = document.createElement('img');
+            img.src = product.image;
+            img.alt = product.name;
+            const name = document.createElement('h3');
+            name.textContent = product.name;
+
+            const price = document.createElement('p');
+            price.textContent = `$${(product.price / 100).toFixed(2)}`;
+
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(price);
+            container.appendChild(card);
+        });
+    }
+        
            
 
 
